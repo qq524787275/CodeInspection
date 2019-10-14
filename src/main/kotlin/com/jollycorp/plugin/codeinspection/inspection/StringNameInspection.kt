@@ -72,7 +72,7 @@ class StringNameInspection : BaseCodeInspection() {
         override fun getFamilyName(): String = "check resource id value"
 
         override fun applyFix(project: Project, descriptor: ProblemDescriptor) {
-            attribute.element?.setValue("@+id/".plus(value.hump2Underline()))
+            attribute.element?.setValue(value.hump2Underline())
             runWriteAction {
                 attribute
             }
