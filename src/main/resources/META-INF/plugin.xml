@@ -9,11 +9,12 @@
     ]]></description>
 
     <change-notes><![CDATA[
-         <p>1.0</p>
+        <p>1.0</p>
         <ul>
             <li>添加数据转换Inspction</li>
-            <li>添加颜色值命名Inspction</li>
+            <li>添加color命名Inspction</li>
             <li>添加资源id命名Inspection</li>
+            <li>添加string命名Inspection</li>
         </ul>
     ]]>
     </change-notes>
