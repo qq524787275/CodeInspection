@@ -1,4 +1,4 @@
-package com.jollycorp.plugin.codeinspection.inspection
+package com.zhuzichu.plugin.codeinspection.inspection
 
 import com.intellij.codeInspection.LocalInspectionToolSession
 import com.intellij.codeInspection.LocalQuickFix
@@ -9,8 +9,8 @@ import com.intellij.psi.PsiElementVisitor
 import com.intellij.psi.SmartPsiElementPointer
 import com.intellij.psi.XmlElementVisitor
 import com.intellij.psi.xml.XmlAttribute
-import com.jollycorp.plugin.codeinspection.ext.hump2Underline
-import com.jollycorp.plugin.codeinspection.ext.isHump
+import com.zhuzichu.plugin.codeinspection.ext.hump2Underline
+import com.zhuzichu.plugin.codeinspection.ext.isHump
 import org.jetbrains.kotlin.idea.util.application.runWriteAction
 import org.jetbrains.kotlin.psi.psiUtil.createSmartPointer
 

@@ -1,8 +1,8 @@
-package com.jollycorp.plugin.codeinspection
+package com.zhuzichu.plugin.codeinspection
 
 import com.google.common.collect.Lists
 import com.intellij.codeInspection.InspectionToolProvider
-import com.jollycorp.plugin.codeinspection.inspection.*
+import com.zhuzichu.plugin.codeinspection.inspection.*
 
 /**
  * Inpection提供者 在plugin.xml 中注册

@@ -1,12 +1,12 @@
-package com.jollycorp.plugin.codeinspection.inspection
+package com.zhuzichu.plugin.codeinspection.inspection
 
 import com.intellij.codeHighlighting.HighlightDisplayLevel
-import org.jetbrains.kotlin.idea.inspections.AbstractKotlinInspection
+import com.intellij.codeInspection.LocalInspectionTool
 
 /**
- * kotlin 代码检测 Inspection基类
+ * java 代码检测 Inspection基类
  */
-abstract class BaseKotlinCodeInspection : AbstractKotlinInspection(), IBaseInspection {
+abstract class BaseCodeInspection : LocalInspectionTool(), IBaseInspection {
 
     override fun getGroupDisplayName(): String {
         return getGroupName()

@@ -1,8 +1,8 @@
 <idea-plugin version="2">
-    <id>com.jollycorp.plugin.codeinspection</id>
+    <id>com.zhuzichu.plugin.codeinspection</id>
     <name>CodeInspection</name>
     <version>1.0</version>
-    <vendor email="coffee.zhu@jollycorp.com" url="http://www..jollycorp.com">jollycorp</vendor>
+    <vendor email="zhuzichu520@gmail.com" url="http://www.zhuzichu.com">zzc</vendor>
 
     <description><![CDATA[
      <p>这个插件添加一些自定义Inspcation,去检测数据转换的一些api,资源id命名,颜色值命名等等</p>
@@ -23,7 +23,7 @@
     <depends>org.jetbrains.kotlin</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <inspectionToolProvider implementation="com.jollycorp.plugin.codeinspection.CodeInspectionProvider"/>
+        <inspectionToolProvider implementation="com.zhuzichu.plugin.codeinspection.CodeInspectionProvider"/>
     </extensions>
 
     <application-components>

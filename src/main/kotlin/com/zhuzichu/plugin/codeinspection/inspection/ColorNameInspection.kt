@@ -1,11 +1,11 @@
-package com.jollycorp.plugin.codeinspection.inspection
+package com.zhuzichu.plugin.codeinspection.inspection
 
 import com.intellij.codeInspection.LocalInspectionToolSession
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElementVisitor
 import com.intellij.psi.XmlElementVisitor
 import com.intellij.psi.xml.XmlAttribute
-import com.jollycorp.plugin.codeinspection.ext.isMatchColorName
+import com.zhuzichu.plugin.codeinspection.ext.isMatchColorName
 
 
 class ColorNameInspection : BaseCodeInspection() {

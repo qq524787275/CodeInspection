@@ -1,4 +1,4 @@
-package com.jollycorp.plugin.codeinspection.ext
+package com.zhuzichu.plugin.codeinspection.ext
 
 import com.intellij.psi.PsiTryStatement
 import org.jetbrains.kotlin.psi.KtTryExpression

@@ -1,10 +1,10 @@
-package com.jollycorp.plugin.codeinspection.inspection
+package com.zhuzichu.plugin.codeinspection.inspection
 
 import com.intellij.codeInspection.LocalInspectionToolSession
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElementVisitor
 import com.intellij.psi.util.PsiTreeUtil
-import com.jollycorp.plugin.codeinspection.ext.catchesNumberFormatException
+import com.zhuzichu.plugin.codeinspection.ext.catchesNumberFormatException
 import org.jetbrains.kotlin.psi.KtCallExpression
 import org.jetbrains.kotlin.psi.KtTryExpression
 import org.jetbrains.kotlin.psi.KtVisitorVoid

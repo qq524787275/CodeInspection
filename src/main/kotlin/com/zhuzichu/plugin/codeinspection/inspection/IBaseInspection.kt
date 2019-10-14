@@ -1,4 +1,4 @@
-package com.jollycorp.plugin.codeinspection.inspection
+package com.zhuzichu.plugin.codeinspection.inspection
 
 import com.intellij.codeHighlighting.HighlightDisplayLevel
 

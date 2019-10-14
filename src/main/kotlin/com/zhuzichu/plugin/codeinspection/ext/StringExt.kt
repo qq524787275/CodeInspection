@@ -1,4 +1,4 @@
-package com.jollycorp.plugin.codeinspection.ext
+package com.zhuzichu.plugin.codeinspection.ext
 
 import java.util.regex.Pattern
 
