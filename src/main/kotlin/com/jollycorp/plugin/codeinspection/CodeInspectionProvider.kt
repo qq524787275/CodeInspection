@@ -2,9 +2,7 @@ package com.jollycorp.plugin.codeinspection
 
 import com.google.common.collect.Lists
 import com.intellij.codeInspection.InspectionToolProvider
-import com.jollycorp.plugin.codeinspection.inspection.JavaDataTypeConvertInspection
-import com.jollycorp.plugin.codeinspection.inspection.KotlinDataTypeConverInspection
-import com.jollycorp.plugin.codeinspection.inspection.LayoutIdInspection
+import com.jollycorp.plugin.codeinspection.inspection.*
 
 /**
  * Inpection提供者 在plugin.xml 中注册
@@ -19,6 +17,8 @@ class CodeInspectionProvider : InspectionToolProvider {
             add(LayoutIdInspection::class.java)
             add(JavaDataTypeConvertInspection::class.java)
             add(KotlinDataTypeConverInspection::class.java)
+            add(ColorNameInspection::class.java)
+            add(StringNameInspection::class.java)
         }
     }
 

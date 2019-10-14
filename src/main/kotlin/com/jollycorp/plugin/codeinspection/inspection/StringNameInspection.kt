@@ -14,13 +14,10 @@ import com.jollycorp.plugin.codeinspection.ext.isHump
 import org.jetbrains.kotlin.idea.util.application.runWriteAction
 import org.jetbrains.kotlin.psi.psiUtil.createSmartPointer
 
-/**
- * xml代码 layout中布局id 命名检测
- */
-class LayoutIdInspection : BaseCodeInspection() {
+class StringNameInspection : BaseCodeInspection() {
 
     override fun getDisplayName(): String {
-        return "资源id命名检测"
+        return "<string> name属性命名检测"
     }
 
     override fun buildVisitor(holder: ProblemsHolder, isOnTheFly: Boolean, session: LocalInspectionToolSession)
@@ -28,17 +25,26 @@ class LayoutIdInspection : BaseCodeInspection() {
         return object : XmlElementVisitor() {
             override fun visitXmlAttribute(attribute: XmlAttribute?) {
                 super.visitXmlAttribute(attribute)
-                if (attribute?.localName != "id") {
+
+                if (attribute == null) {
                     return
                 }
 
-                val value = attribute.value?.split("/")?.get(1)
+                if (attribute.localName != "name") {
+                    return
+                }
+
+                if (attribute.parent.name != "string") {
+                    return
+                }
+
+                val value = attribute.value
 
                 if (!value.isNullOrBlank() && !value[0].isLetter()) {
                     holder.registerProblem(
                             attribute,
-                            "请使用小写字母开头 格式：控件缩写_{范围_}_实际意义单词，范围可选（页面" +
-                                    "名称或模块）。如：btn_login"
+                            "请使用小写字母开头 格式：页面名称(或者简写)_{类型}_{实际意义单词},如:" +
+                                    "页面标题：title。如FragmentGoodsDetail的标题：goods_detail_title"
                     )
                     return
                 }
@@ -46,14 +52,15 @@ class LayoutIdInspection : BaseCodeInspection() {
                 if (!value.isNullOrBlank() && value.isHump()) {
                     holder.registerProblem(
                             attribute,
-                            "请使用下划线_替代驼峰 格式：控件缩写_{范围_}_实际意义单词，范围可选（页" +
-                                    "面名称或模块）。如：btn_login",
+                            "请使用下划线_替代驼峰 格式：页面名称(或者简写)_{类型}_{实际意义单词},如" +
+                                    ":页面标题：title。如FragmentGoodsDetail的标题：goods_detail_title",
                             GenerateMethod(attribute.createSmartPointer(), value)
                     )
                 }
             }
         }
     }
+
 
     /**
      * 驼峰转下划线快捷方式

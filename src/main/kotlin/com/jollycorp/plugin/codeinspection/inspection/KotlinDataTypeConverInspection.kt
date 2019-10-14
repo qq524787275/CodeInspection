@@ -18,7 +18,8 @@ class KotlinDataTypeConverInspection : BaseKotlinCodeInspection() {
         return "kotlin 数据类型转换检测"
     }
 
-    override fun buildVisitor(holder: ProblemsHolder, isOnTheFly: Boolean, session: LocalInspectionToolSession): PsiElementVisitor {
+    override fun buildVisitor(holder: ProblemsHolder, isOnTheFly: Boolean, session: LocalInspectionToolSession)
+            : PsiElementVisitor {
         return object : KtVisitorVoid() {
             override fun visitCallExpression(expression: KtCallExpression) {
                 super.visitCallExpression(expression)
@@ -30,7 +31,8 @@ class KotlinDataTypeConverInspection : BaseKotlinCodeInspection() {
                 val tryElement = PsiTreeUtil.getParentOfType(expression, KtTryExpression::class.java)
 
                 if (!tryElement.catchesNumberFormatException()) {
-                    holder.registerProblem(expression, "可能会报NumberFormatException异常,请使用 ToolNumber 里的方法替代,或者用 try catch(NumberFormatException) 包裹起来")
+                    holder.registerProblem(expression, "可能会报NumberFormatException异常,请使用" +
+                            " ToolNumber 里的方法替代,或者用 try catch(NumberFormatException) 包裹起来")
                 }
 
             }
