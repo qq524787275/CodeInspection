@@ -58,7 +58,7 @@ class LeftOrRightInspection : BaseCodeInspection() {
     }
 
     /**
-     * 驼峰转下划线快捷方式
+     * 检测约束布局 left right 替换成 end start
      */
     inner class GenerateMethod(
             private val attribute: SmartPsiElementPointer<XmlAttribute>,
