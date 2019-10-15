@@ -28,8 +28,6 @@ class LeftOrRightInspection : BaseCodeInspection() {
                     return
                 }
 
-
-
                 if (attribute.parent.parentTag?.name != "androidx.constraintlayout.widget.ConstraintLayout") {
                     return
                 }
