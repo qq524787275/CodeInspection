@@ -19,6 +19,7 @@ class CodeInspectionProvider : InspectionToolProvider {
             add(KotlinDataTypeConverInspection::class.java)
             add(ColorNameInspection::class.java)
             add(StringNameInspection::class.java)
+            add(LeftOrRightInspection::class.java)
         }
     }
 
