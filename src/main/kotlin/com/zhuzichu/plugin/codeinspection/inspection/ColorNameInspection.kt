@@ -8,6 +8,9 @@ import com.intellij.psi.xml.XmlAttribute
 import com.zhuzichu.plugin.codeinspection.ext.isMatchColorName
 
 
+/**
+ * <color>标签 name属性命名检测
+ */
 class ColorNameInspection : BaseCodeInspection() {
 
     override fun getDisplayName(): String {

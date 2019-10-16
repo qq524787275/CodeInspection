@@ -34,6 +34,7 @@ class LayoutIdInspection : BaseCodeInspection() {
 
                 val value = attribute.value?.split("/")?.get(1)
 
+                //判断第一个字符是否是小写字母
                 if (!value.isNullOrBlank() && !value[0].isLetter()) {
                     holder.registerProblem(
                             attribute,
@@ -43,6 +44,7 @@ class LayoutIdInspection : BaseCodeInspection() {
                     return
                 }
 
+                //判断是否是驼峰命名
                 if (!value.isNullOrBlank() && value.isHump()) {
                     holder.registerProblem(
                             attribute,
